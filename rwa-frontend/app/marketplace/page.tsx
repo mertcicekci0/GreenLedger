@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { 
-  Building2, 
+  Wheat, 
   MapPin, 
   TrendingUp, 
   Users,
@@ -29,10 +29,10 @@ import Link from 'next/link';
 const marketplaceAssets = [
   {
     id: '1',
-    name: 'Luxury Apartment NYC',
-    location: 'Manhattan, New York',
-    type: 'real_estate',
-    description: 'Premium apartment in Manhattan with high rental yield',
+    name: 'Premium Wheat Fields',
+    location: 'Kansas, USA',
+    type: 'grain_crops',
+    description: 'High-yield wheat farm with irrigation systems and premium soil',
     totalValue: '2500000',
     availableTokens: '1000000',
     pricePerToken: '2.50',
@@ -46,10 +46,10 @@ const marketplaceAssets = [
   },
   {
     id: '2',
-    name: 'Downtown Office Building',
-    location: 'Chicago, Illinois',
-    type: 'real_estate',
-    description: 'Class A commercial office space in downtown Chicago',
+    name: 'Organic Corn Plantation',
+    location: 'Iowa, USA',
+    type: 'specialty_crops',
+    description: 'Certified organic corn farm with sustainable farming practices',
     totalValue: '5000000',
     availableTokens: '2000000',
     pricePerToken: '2.50',
@@ -63,10 +63,10 @@ const marketplaceAssets = [
   },
   {
     id: '3',
-    name: 'Gold Storage Facility',
-    location: 'Delaware, USA',
-    type: 'commodities',
-    description: 'Secure precious metals storage and trading facility',
+    name: 'Soybean Processing Facility',
+    location: 'Illinois, USA',
+    type: 'agricultural_infrastructure',
+    description: 'Modern soybean processing and storage facility',
     totalValue: '3000000',
     availableTokens: '1500000',
     pricePerToken: '2.00',
@@ -80,10 +80,10 @@ const marketplaceAssets = [
   },
   {
     id: '4',
-    name: 'Renewable Energy Farm',
-    location: 'Texas, USA',
-    type: 'infrastructure',
-    description: 'Solar energy farm with long-term government contracts',
+    name: 'Rice Terraces Farm',
+    location: 'California, USA',
+    type: 'specialty_crops',
+    description: 'Sustainable rice farm with water-efficient irrigation systems',
     totalValue: '8000000',
     availableTokens: '4000000',
     pricePerToken: '2.00',
@@ -104,10 +104,10 @@ export default function MarketplacePage() {
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
 
   const assetTypes = [
-    { value: 'all', label: 'All Assets' },
-    { value: 'real_estate', label: 'Real Estate' },
-    { value: 'commodities', label: 'Commodities' },
-    { value: 'infrastructure', label: 'Infrastructure' }
+    { value: 'all', label: 'All Crops' },
+    { value: 'grain_crops', label: 'Grain Crops' },
+    { value: 'specialty_crops', label: 'Specialty Crops' },
+    { value: 'agricultural_infrastructure', label: 'Farm Infrastructure' }
   ];
 
   const statusTypes = [
@@ -159,9 +159,9 @@ export default function MarketplacePage() {
         <div className="space-y-8">
           {/* Page Header */}
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold">Asset Marketplace</h1>
+            <h1 className="text-4xl font-bold">Crop Market</h1>
             <p className="text-xl text-muted-foreground">
-              Discover tokenized real world assets and start investing today
+              Discover tokenized agricultural assets and start investing in crops today
             </p>
           </div>
 
@@ -169,12 +169,12 @@ export default function MarketplacePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Total Assets</CardTitle>
-                <Building2 className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm font-medium">Total Crops</CardTitle>
+                <Wheat className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">{marketplaceAssets.length}</div>
-                <p className="text-xs text-muted-foreground">Across multiple sectors</p>
+                <p className="text-xs text-muted-foreground">Across multiple crop types</p>
               </CardContent>
             </Card>
 
@@ -189,7 +189,7 @@ export default function MarketplacePage() {
                     marketplaceAssets.reduce((sum, asset) => sum + parseFloat(asset.totalValue), 0).toString()
                   )}
                 </div>
-                <p className="text-xs text-muted-foreground">Available for investment</p>
+                <p className="text-xs text-muted-foreground">Available for crop investment</p>
               </CardContent>
             </Card>
 
@@ -223,7 +223,7 @@ export default function MarketplacePage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Filter className="h-5 w-5" />
-                Filter Assets
+                Filter Crops
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -232,7 +232,7 @@ export default function MarketplacePage() {
                   <div className="relative">
                     <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
-                      placeholder="Search assets by name or location..."
+                      placeholder="Search crops by name or location..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="pl-8"
@@ -395,8 +395,8 @@ export default function MarketplacePage() {
                     </Button>
                     <Button size="lg" variant="secondary" asChild>
                       <Link href="/tokenize">
-                        <Building2 className="h-5 w-5 mr-2" />
-                        Tokenize Asset
+                        <Wheat className="h-5 w-5 mr-2" />
+                        Tokenize Crop
                       </Link>
                     </Button>
                   </>

@@ -6,7 +6,7 @@ import { useWalletStore } from '@/stores/wallet';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Building2, 
+  Wheat, 
   Wallet, 
   Network, 
   Settings, 
@@ -96,10 +96,10 @@ export function Header() {
         {/* Logo and Navigation */}
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-3">
-            <Building2 className="h-8 w-8 text-primary" />
+            <Wheat className="h-8 w-8 text-primary" />
             <div>
-              <h1 className="text-lg font-bold">RWA Investor</h1>
-              <p className="text-xs text-muted-foreground">Real World Assets</p>
+              <h1 className="text-lg font-bold">AgriToken</h1>
+              <p className="text-xs text-muted-foreground">Agricultural Assets</p>
             </div>
           </Link>
 
@@ -109,25 +109,25 @@ export function Header() {
               href="/dashboard" 
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              Dashboard
+              Farmer Panel
             </Link>
             <Link 
               href="/marketplace" 
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              Marketplace
+              Crop Market
             </Link>
             <Link 
               href="/tokenize" 
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              Tokenize
+              Tokenize Crop
             </Link>
             <Link 
               href="/transfer" 
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              Transfer
+              Transfer Assets
             </Link>
           </nav>
         </div>

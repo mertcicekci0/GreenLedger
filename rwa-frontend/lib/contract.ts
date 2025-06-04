@@ -37,13 +37,13 @@ class MockContractClient implements ContractMethods {
 
   // Mock asset metadata matching our deployed contract
   private mockAssetMetadata: AssetMetadata = {
-    name: 'Luxury Apartment NYC',
-    symbol: 'LAPT',
-    asset_type: 'real_estate',
-    description: 'Premium Manhattan apartment tokenized for fractional ownership',
+    name: 'Premium Wheat Fields Kansas',
+    symbol: 'PWFK',
+    asset_type: 'grain_crops',
+    description: 'High-yield wheat farm tokenized for fractional crop ownership',
     valuation: '25000000000000', // $2.5M in stroops
     last_valuation_date: Math.floor(Date.now() / 1000),
-    legal_doc_hash: 'deed_hash_abc123'
+    legal_doc_hash: 'farm_deed_hash_abc123'
   };
 
   // View functions

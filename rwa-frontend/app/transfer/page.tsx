@@ -115,7 +115,7 @@ export default function TransferPage() {
                 <Wallet className="h-16 w-16 mx-auto text-muted-foreground" />
                 <CardTitle>Connect Your Wallet</CardTitle>
                 <CardDescription>
-                  You need to connect your Freighter wallet to transfer RWA tokens
+                  You need to connect your Freighter wallet to transfer crop tokens
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -137,9 +137,9 @@ export default function TransferPage() {
         <div className="max-w-2xl mx-auto space-y-6">
           {/* Page Header */}
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold">Transfer RWA Tokens</h1>
+            <h1 className="text-3xl font-bold">Transfer Crop Tokens</h1>
             <p className="text-muted-foreground">
-              Send your tokenized real world asset shares to other verified investors
+              Send your agricultural asset tokens to other verified investors
             </p>
           </div>
 

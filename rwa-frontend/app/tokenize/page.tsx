@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { 
-  Building2, 
+  Wheat, 
   FileText, 
   Shield, 
   Clock,
@@ -24,7 +24,9 @@ import {
   Briefcase,
   Coins,
   Calculator,
-  Info
+  Info,
+  Sprout,
+  Tractor
 } from 'lucide-react';
 import { formatCurrency } from '@/lib/stellar';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -32,56 +34,56 @@ import { Progress } from '@/components/ui/progress';
 
 const ASSET_TYPES = [
   {
-    id: 'real_estate',
-    name: 'Real Estate',
-    description: 'Residential, commercial, or industrial properties',
-    icon: Building2,
+    id: 'grain_crops',
+    name: 'Grain Crops',
+    description: 'Wheat, corn, rice, and other staple grain crops',
+    icon: Wheat,
     minValue: 100000,
-    examples: ['Apartment buildings', 'Office complexes', 'Warehouses', 'Retail spaces']
+    examples: ['Wheat fields', 'Corn plantations', 'Rice paddies', 'Barley farms']
   },
   {
-    id: 'commodities',
-    name: 'Commodities',
-    description: 'Physical goods and precious metals',
-    icon: Coins,
+    id: 'specialty_crops',
+    name: 'Specialty Crops',
+    description: 'High-value crops and organic produce',
+    icon: Sprout,
     minValue: 50000,
-    examples: ['Gold storage', 'Oil reserves', 'Agricultural products', 'Rare metals']
+    examples: ['Organic vegetables', 'Premium fruits', 'Herbs and spices', 'Vineyards']
   },
   {
-    id: 'infrastructure',
-    name: 'Infrastructure',
-    description: 'Energy, transportation, and utility projects',
-    icon: Briefcase,
+    id: 'agricultural_infrastructure',
+    name: 'Farm Infrastructure',
+    description: 'Agricultural facilities and equipment',
+    icon: Tractor,
     minValue: 500000,
-    examples: ['Solar farms', 'Wind turbines', 'Data centers', 'Transportation hubs']
+    examples: ['Processing facilities', 'Storage silos', 'Irrigation systems', 'Farm equipment']
   }
 ];
 
 const TOKENIZATION_STEPS = [
   {
     id: 1,
-    title: 'Asset Details',
-    description: 'Provide basic information about your asset'
+    title: 'Crop Details',
+    description: 'Provide basic information about your agricultural asset'
   },
   {
     id: 2,
-    title: 'Legal Documentation',
-    description: 'Upload required legal and ownership documents'
+    title: 'Farm Documentation',
+    description: 'Upload required agricultural and ownership documents'
   },
   {
     id: 3,
     title: 'Tokenization Structure',
-    description: 'Define token economics and distribution'
+    description: 'Define token economics and crop yield distribution'
   },
   {
     id: 4,
-    title: 'Compliance Setup',
-    description: 'Configure investor requirements and restrictions'
+    title: 'Farmer Compliance',
+    description: 'Configure investor requirements and agricultural standards'
   },
   {
     id: 5,
     title: 'Review & Deploy',
-    description: 'Review all details and deploy your token'
+    description: 'Review all details and deploy your crop token'
   }
 ];
 
@@ -89,28 +91,35 @@ export default function TokenizePage() {
   const { isConnected, address } = useWalletStore();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    // Step 1: Asset Details
+    // Step 1: Crop Details
     assetType: '',
     assetName: '',
     location: '',
     description: '',
     totalValue: '',
+    cropType: '',
+    harvestSeason: '',
+    farmSize: '',
     
-    // Step 2: Legal Documentation
+    // Step 2: Farm Documentation
     ownershipProof: null as File | null,
     valuation: null as File | null,
     insurance: null as File | null,
+    soilReport: null as File | null,
+    organicCertification: null as File | null,
     
     // Step 3: Tokenization Structure
     tokenSymbol: '',
     totalSupply: '',
     pricePerToken: '',
     minInvestment: '',
+    yieldDistribution: '',
     
-    // Step 4: Compliance
+    // Step 4: Farmer Compliance
     kycRequired: true,
     accreditedOnly: false,
     jurisdictionRestrictions: '',
+    sustainabilityStandards: '',
     
     // Step 5: Launch settings
     launchDate: '',
@@ -154,7 +163,7 @@ export default function TokenizePage() {
         return (
           <div className="space-y-6">
             <div>
-              <Label className="text-base font-semibold mb-4 block">Asset Type</Label>
+              <Label className="text-base font-semibold mb-4 block">Crop Type</Label>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {ASSET_TYPES.map((type) => {
                   const Icon = type.icon;
@@ -182,19 +191,19 @@ export default function TokenizePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="assetName">Asset Name</Label>
+                <Label htmlFor="assetName">Crop Name</Label>
                 <Input
                   id="assetName"
-                  placeholder="e.g., Luxury Apartment NYC"
+                  placeholder="e.g., Premium Wheat Fields Kansas"
                   value={formData.assetName}
                   onChange={(e) => updateFormData('assetName', e.target.value)}
                 />
               </div>
               <div>
-                <Label htmlFor="location">Location</Label>
+                <Label htmlFor="location">Farm Location</Label>
                 <Input
                   id="location"
-                  placeholder="e.g., Manhattan, New York"
+                  placeholder="e.g., Kansas, USA"
                   value={formData.location}
                   onChange={(e) => updateFormData('location', e.target.value)}
                 />
@@ -202,10 +211,10 @@ export default function TokenizePage() {
             </div>
 
             <div>
-              <Label htmlFor="description">Asset Description</Label>
+              <Label htmlFor="description">Crop Description</Label>
               <Textarea
                 id="description"
-                placeholder="Detailed description of your asset, its features, and investment potential..."
+                placeholder="Detailed description of your agricultural asset, farming methods, and expected yields..."
                 value={formData.description}
                 onChange={(e) => updateFormData('description', e.target.value)}
                 className="min-h-24"
@@ -213,7 +222,7 @@ export default function TokenizePage() {
             </div>
 
             <div>
-              <Label htmlFor="totalValue">Total Asset Value (USD)</Label>
+              <Label htmlFor="totalValue">Total Crop Value (USD)</Label>
               <Input
                 id="totalValue"
                 type="number"
@@ -222,7 +231,7 @@ export default function TokenizePage() {
                 onChange={(e) => updateFormData('totalValue', e.target.value)}
               />
               <p className="text-sm text-muted-foreground mt-1">
-                Based on professional appraisal or market valuation
+                Based on professional agricultural appraisal and expected harvest value
               </p>
             </div>
           </div>
@@ -234,7 +243,7 @@ export default function TokenizePage() {
             <Alert>
               <Info className="h-4 w-4" />
               <AlertDescription>
-                All documents must be notarized and verified by our legal team before tokenization approval.
+                All agricultural documents must be verified by our agricultural experts before tokenization approval.
               </AlertDescription>
             </Alert>
 
@@ -243,10 +252,10 @@ export default function TokenizePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <FileText className="h-5 w-5" />
-                    Ownership Proof
+                    Land Ownership Proof
                   </CardTitle>
                   <CardDescription>
-                    Property deed, title, or ownership certificate
+                    Farm deed, land title, or ownership certificate
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -264,10 +273,10 @@ export default function TokenizePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Calculator className="h-5 w-5" />
-                    Professional Valuation
+                    Agricultural Valuation
                   </CardTitle>
                   <CardDescription>
-                    Official appraisal from certified assessor
+                    Professional crop valuation from certified agricultural assessor
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

@@ -265,4 +265,43 @@ export interface FinancialsFormData {
   managementFee: string;
   distributionFrequency: 'monthly' | 'quarterly' | 'annually';
   estimatedAppreciation: string;
-} 
+}
+
+// Agricultural Asset Types
+export interface CropAsset {
+  id: string;
+  name: string;
+  cropType: 'grain_crops' | 'specialty_crops' | 'agricultural_infrastructure';
+  location: string;
+  description: string;
+  farmSize: string; // in acres or hectares
+  harvestSeason: string;
+  expectedYield: string;
+  qualityCertifications: string[];
+  irrigationSystem: string;
+  sustainabilityScore: number;
+  totalValue: string;
+  tokenSymbol: string;
+  status: 'growing' | 'harvest_ready' | 'harvested' | 'tokenized';
+  plantingDate: number;
+  expectedHarvestDate: number;
+  contractId?: string;
+}
+
+export interface AgriculturalMetrics {
+  soilQuality: number; // 1-10 scale
+  weatherRisk: 'low' | 'medium' | 'high';
+  yieldPrediction: string;
+  carbonFootprint: string;
+  waterUsage: string;
+  pesticideUse: 'none' | 'organic' | 'conventional';
+}
+
+export interface FarmingPractices {
+  organic: boolean;
+  sustainable: boolean;
+  irrigationType: 'drip' | 'sprinkler' | 'flood' | 'rain_fed';
+  soilManagement: string[];
+  cropRotation: boolean;
+  pestManagement: 'ipm' | 'organic' | 'conventional';
+}

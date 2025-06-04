@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Building2, 
+  Wheat, 
   Coins, 
   TrendingUp, 
   Users,
@@ -53,10 +53,10 @@ export default function Dashboard() {
           <div className="flex flex-col items-center justify-center min-h-[calc(100vh-120px)] space-y-8">
             <div className="text-center space-y-4 max-w-2xl">
               <h1 className="text-4xl font-bold tracking-tight">
-                Real World Asset Investment Platform
+                Agricultural Asset Tokenization Platform
               </h1>
               <p className="text-xl text-muted-foreground">
-                Access tokenized real estate, commodities, and other physical assets 
+                Access tokenized agricultural assets, crops, and farming infrastructure 
                 through compliant blockchain technology on Stellar.
               </p>
             </div>
@@ -64,12 +64,12 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl">
               <Card className="text-center">
                 <CardHeader>
-                  <Building2 className="h-12 w-12 mx-auto text-primary" />
-                  <CardTitle className="text-lg">Tokenized Assets</CardTitle>
+                  <Wheat className="h-12 w-12 mx-auto text-primary" />
+                  <CardTitle className="text-lg">Tokenized Crops</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Invest in premium real estate and other assets through blockchain tokens
+                    Invest in premium agricultural assets and crop yields through blockchain tokens
                   </p>
                 </CardContent>
               </Card>
@@ -93,7 +93,7 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Earn passive income through rental yields and asset appreciation
+                    Earn passive income through crop yields and agricultural asset appreciation
                   </p>
                 </CardContent>
               </Card>
@@ -111,9 +111,9 @@ export default function Dashboard() {
         <div className="space-y-8">
           {/* Welcome Section */}
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Welcome to RWA Investor</h1>
+            <h1 className="text-3xl font-bold">Welcome to AgriToken</h1>
             <p className="text-lg text-muted-foreground">
-              Your gateway to tokenized real world assets
+              Your gateway to tokenized agricultural assets
             </p>
           </div>
 
@@ -121,8 +121,8 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Your Holdings</CardTitle>
-                <Building2 className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm font-medium">Your Crop Holdings</CardTitle>
+                <Wheat className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">
@@ -163,7 +163,7 @@ export default function Dashboard() {
               <CardContent>
                 <div className="text-2xl font-bold">8.5%</div>
                 <p className="text-xs text-muted-foreground">
-                  Rental income + appreciation
+                  Crop yields + appreciation
                 </p>
               </CardContent>
             </Card>
@@ -176,7 +176,7 @@ export default function Dashboard() {
               <CardContent>
                 <div className="text-2xl font-bold">15 days</div>
                 <p className="text-xs text-muted-foreground">
-                  Monthly rental payment
+                  Monthly harvest payment
                 </p>
               </CardContent>
             </Card>
@@ -239,17 +239,17 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle>Investment Opportunities</CardTitle>
+                <CardTitle>Agricultural Opportunities</CardTitle>
                 <CardDescription>
-                  Discover new tokenized assets to diversify your portfolio
+                  Discover new tokenized crop assets to diversify your agricultural portfolio
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 border rounded-lg">
                     <div>
-                      <p className="font-medium">Downtown Office Building</p>
-                      <p className="text-sm text-muted-foreground">Commercial Real Estate</p>
+                      <p className="font-medium">Premium Wheat Harvest</p>
+                      <p className="text-sm text-muted-foreground">Grain Commodities</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold">9.2% APY</p>
@@ -259,8 +259,8 @@ export default function Dashboard() {
                   
                   <div className="flex items-center justify-between p-3 border rounded-lg">
                     <div>
-                      <p className="font-medium">Gold Storage Facility</p>
-                      <p className="text-sm text-muted-foreground">Commodities</p>
+                      <p className="font-medium">Organic Corn Fields</p>
+                      <p className="text-sm text-muted-foreground">Specialty Crops</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold">6.8% APY</p>
@@ -271,7 +271,7 @@ export default function Dashboard() {
                 
                 <Button className="w-full" variant="outline" asChild>
                   <Link href="/marketplace">
-                    View All Opportunities
+                    View All Crop Opportunities
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Link>
                 </Button>
@@ -290,8 +290,8 @@ export default function Dashboard() {
                   <div className="flex items-center gap-3">
                     <div className="h-2 w-2 bg-green-500 rounded-full"></div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium">Welcome to RWA Investor</p>
-                      <p className="text-xs text-muted-foreground">Account created successfully</p>
+                      <p className="text-sm font-medium">Welcome to AgriToken</p>
+                      <p className="text-xs text-muted-foreground">Farmer account created successfully</p>
                     </div>
                     <p className="text-xs text-muted-foreground">Just now</p>
                   </div>
@@ -308,7 +308,7 @@ export default function Dashboard() {
                 
                 <Button className="w-full" variant="outline" asChild>
                   <Link href="/transfer">
-                    Make Your First Transfer
+                    Make Your First Crop Transfer
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Link>
                 </Button>
