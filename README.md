@@ -1,8 +1,8 @@
-# 🏢 RWA Investment Platform
+# 🌿 GreenLedger Marketplace
 
-A professional Real World Asset (RWA) tokenization and investment platform built on the Stellar blockchain. This platform enables investors to discover, invest in, and trade tokenized real world assets including real estate, commodities, and infrastructure projects.
+A professional agricultural tokenization platform built on the Stellar blockchain. This platform enables farmers to tokenize their crops before harvest for pre-funding, while allowing investors and buyers to support sustainable agriculture and gain early access to quality organic products.
 
-![RWA Platform](https://img.shields.io/badge/Platform-RWA_Investment-blue)
+![GreenLedger Platform](https://img.shields.io/badge/Platform-GreenLedger_Marketplace-22c55e)
 ![Blockchain](https://img.shields.io/badge/Blockchain-Stellar-brightgreen)
 ![Framework](https://img.shields.io/badge/Framework-Next.js_15-black)
 ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)
@@ -10,7 +10,7 @@ A professional Real World Asset (RWA) tokenization and investment platform built
 
 ## 🎯 **Project Overview**
 
-The RWA Investment Platform democratizes access to traditionally illiquid real world assets by tokenizing them on the Stellar blockchain. Investors can purchase fractional ownership of high-value assets like premium real estate, precious metals storage facilities, and renewable energy infrastructure.
+GreenLedger Marketplace revolutionizes agricultural financing by enabling farmers to tokenize their crops before harvest. This creates a transparent, blockchain-based system where farmers receive early funding, investors support sustainable agriculture, and buyers gain guaranteed access to quality organic products.
 
 ### **🌟 Key Features**
 
@@ -46,8 +46,8 @@ The RWA Investment Platform democratizes access to traditionally illiquid real w
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd rwa-investment-platform
+git clone https://github.com/mertcicekci0/AgriToken-V2.git
+cd AgriToken-V2
 
 # Navigate to frontend directory
 cd rwa-frontend
@@ -119,8 +119,8 @@ rwa-frontend/
 ### **Contract Details**
 - **Contract ID**: `CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6`
 - **Network**: Stellar Testnet
-- **Asset**: Luxury Apartment NYC (LAPT)
-- **Type**: Premium Manhattan real estate token
+- **Asset**: Premium Organic Crops (CROP)
+- **Type**: Agricultural tokenization smart contract
 
 ### **Supported Operations**
 
@@ -138,13 +138,13 @@ rwa-frontend/
 
 ```typescript
 interface AssetMetadata {
-  name: string;              // "Luxury Apartment NYC"
-  symbol: string;            // "LAPT"  
-  asset_type: string;        // "real_estate"
-  description: string;       // Asset description
+  name: string;              // "Premium Organic Tomatoes"
+  symbol: string;            // "CROP"  
+  asset_type: string;        // "agricultural_commodity"
+  description: string;       // Crop description
   valuation: string;         // Current USD value
   last_valuation_date: number; // Unix timestamp
-  legal_doc_hash: string;    // Property deed hash
+  legal_doc_hash: string;    // Farm ownership/contract hash
 }
 ```
 
@@ -294,20 +294,20 @@ NEXT_PUBLIC_CONTRACT_ID=CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6
 
 ## 📈 **Asset Types Supported**
 
-### **🏢 Real Estate**
+### **🌾 Agricultural Commodities**
+- **Minimum Value**: $25,000
+- **Examples**: Organic crops, livestock, dairy products, specialty grains
+- **Current**: Premium Organic Tomatoes (CROP) - $500K sustainable farm harvest
+
+### **🏢 Real Estate (Agricultural)**
 - **Minimum Value**: $100,000
-- **Examples**: Apartment buildings, office complexes, retail spaces
-- **Current**: Luxury Apartment NYC (LAPT) - $2.5M Manhattan property
+- **Examples**: Farmland, agricultural facilities, processing plants
+- **Planned**: Organic Farm Complex (California) - $2.5M certified organic facility
 
-### **🏅 Commodities**
-- **Minimum Value**: $50,000
-- **Examples**: Gold storage, oil reserves, agricultural products
-- **Planned**: Gold Storage Facility (Delaware) - $3M precious metals facility
-
-### **⚡ Infrastructure**
-- **Minimum Value**: $500,000
-- **Examples**: Solar farms, data centers, transportation hubs
-- **Planned**: Renewable Energy Farm (Texas) - $8M solar project
+### **⚡ Agricultural Infrastructure**
+- **Minimum Value**: $250,000
+- **Examples**: Irrigation systems, storage facilities, processing equipment
+- **Planned**: Smart Greenhouse Complex (Netherlands) - $5M precision agriculture project
 
 ---
 
@@ -331,7 +331,7 @@ NEXT_PUBLIC_CONTRACT_ID=CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6
 
 ## 🤝 **Contributing**
 
-We welcome contributions to the RWA Investment Platform! Here's how to get started:
+We welcome contributions to the GreenLedger Marketplace! Here's how to get started:
 
 ### **Development Workflow**
 
@@ -411,7 +411,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 <div align="center">
 
-**Built with ❤️ for the future of tokenized real world assets**
+**Built with 🌱 for the future of sustainable agriculture and tokenized farming**
 
 [Website](link) • [Documentation](link) • [Discord](link) • [Twitter](link)
 
