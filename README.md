@@ -117,7 +117,6 @@ rwa-frontend/
 ## 💼 **Smart Contract Integration**
 
 ### **Contract Details**
-- **Contract ID**: `CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6`
 - **Network**: Stellar Testnet
 - **Asset**: Premium Organic Crops (CROP)
 - **Type**: Agricultural tokenization smart contract
